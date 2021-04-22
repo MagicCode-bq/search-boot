@@ -2,41 +2,52 @@ package org.lbq.searchboot.bean;
 
 import java.io.Serializable;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 /**
  * null
  * @TableName t_poem
  */
 @Data
+@Document(indexName = "poems",type = "poem")
 public class Poem implements Serializable {
     /**
      * 
      */
+    @Id
     private String id;
 
     /**
      * 
      */
+    @Field(type = FieldType.Text,analyzer = "ik_max_word")
     private String name;
 
     /**
      * 
      */
+    @Field(type=FieldType.Keyword)
     private String author;
 
     /**
      * 
      */
+    @Field(type=FieldType.Text,analyzer = "ik_max_word")
     private String type;
 
     /**
      * 
      */
+    @Field(type=FieldType.Text,analyzer = "ik_max_word")
     private String content;
 
     /**
      * 
      */
+    @Field(type=FieldType.Keyword)
     private String href;
 
     /**

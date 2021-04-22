@@ -15,18 +15,7 @@ public class SearchBootApplication {
         SpringApplication.run(SearchBootApplication.class, args);
     }
 
-    /*@Bean
-    public PageHelper pageHelper() {
-        PageHelper pageHelper = new PageHelper();
-        Properties properties = new Properties();
-        properties.setProperty("offsetAsPageNum", "true");
-        properties.setProperty("rowBoundsWithCount", "true");
-        properties.setProperty("reasonable", "true");
-        //配置mysql数据库的方言
-        properties.setProperty("dialect", "Mysql");
-        pageHelper.setProperties(properties);
-        return pageHelper;
-    }*/
+
 
 
 }

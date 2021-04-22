@@ -42,4 +42,5 @@ public class PoemController {
         int i = poemService.deletePoemId(id);
         return  i>0?"成功":"失败";
     }
+
 }

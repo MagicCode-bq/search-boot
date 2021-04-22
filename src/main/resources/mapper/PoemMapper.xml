@@ -38,4 +38,12 @@
     <select id="FindPoemList" resultMap="BaseResultMap">
         select tp.* from t_poem tp
     </select>
+
+    <select id="getAuthorSize" resultType="org.lbq.searchboot.Vo.CountVo">
+        select  author,COUNt(*) as size
+        from t_poem
+        GROUP BY author
+        HAVING COUNt(*) > 10
+        ORDER BY size desc
+    </select>
 </mapper>

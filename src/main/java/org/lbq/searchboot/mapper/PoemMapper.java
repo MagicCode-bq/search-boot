@@ -3,9 +3,12 @@ package org.lbq.searchboot.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.lbq.searchboot.Vo.CountVo;
 import org.lbq.searchboot.bean.Poem;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
 * @Entity org.lbq.searchboot.bean.Poem
@@ -24,5 +27,8 @@ public interface PoemMapper {
 
     //删除一条信息
      int deletePoemId(String id);
+
+     //查询作者诗词数大于10篇位作者
+    public List<CountVo> getAuthorSize();
 
 }

@@ -1,6 +1,7 @@
 package org.lbq.searchboot.service.impl;
 
 
+import org.lbq.searchboot.Vo.CountVo;
 import org.lbq.searchboot.bean.Poem;
 import org.lbq.searchboot.mapper.PoemMapper;
 import org.lbq.searchboot.service.PoemService;
@@ -45,5 +46,11 @@ public class PoemServiceImpl implements PoemService{
         return poemMapper.deletePoemId(id);
     }
 
+
+    @Override
+    public List<CountVo> queryAuthorPoemSize() {
+        List<CountVo> authorSize = poemMapper.getAuthorSize();
+        return  authorSize;
+    }
 
 }
